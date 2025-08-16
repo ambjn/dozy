@@ -1,7 +1,15 @@
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { Stack } from "expo-router";
 import "../global.css";
 
-import { Stack } from "expo-router";
+const convex = new ConvexReactClient(
+  process.env.EXPO_PUBLIC_CONVEX_URL as string
+);
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <ConvexProvider client={convex}>
+      <Stack />
+    </ConvexProvider>
+  );
 }
