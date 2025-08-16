@@ -9,7 +9,9 @@ const convex = new ConvexReactClient(
 export default function RootLayout() {
   return (
     <ConvexProvider client={convex}>
-      <Stack />
+      <Stack>
+        <Stack.Screen name="index" options={{ title: "dozy 📝" }} />
+      </Stack>
     </ConvexProvider>
   );
 }
